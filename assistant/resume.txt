@@ -1,0 +1,42 @@
+Name: Mitchell Tracy
+Email: mitchell.tracy@hey.com
+Phone: 412-500-3404
+Country: United States
+State: Maryland
+
+# About
+Engineer with 8+ years of professional experience including co-founding a successful startup. Passionate about learning, growth, and making a difference through technology.  
+
+# Experience
+## Co-Founder & CTO, [TwnSqr, Inc.](https://twnsqr.com)
+### Jul. 2019 - Nov. 2023
+
+TwnSqr is a marketplace that improves the liquidity of investment real estate. As co-founder and CTO, I operated rapid cycles of talking to the customer, designing a product, learning the tech required, writing the code, testing, deploying, and monitoring. I also worked regularly with engineers at external companies to create powerful API-driven integrations for our ecosystem. A handful of technologies I used extensively were TypeScript, React, NextJS, Postgres, GraphQL, Docker, GCP, MongoDB, and LLMs.
+- Served as the technical backbone for the business.
+- Transformed conversations with customers into finished products.
+- Achieved profitability and seamlessly transitioned out.
+
+## Software Engineer, Hewlett Packard Enterprise
+### Jan. 2017 - Jul. 2019
+
+I worked on a high performance, distributed database called Vertica. In addition to development of the core engine in C++, I worked on integrating the database with other projects such as Apache Hadoop and Amazon AWS. I was responsible for several key features to the product, including integration with Cloudera Manager and Apache Sentry, creating an test framework to autonomously deploy virtual Hadoop clusters for integration testing, and vastly improving the performance of searching for files on Amazon S3.
+
+As part of this last task, I designed and implemented a specialized prefix tree data structure to locally cache information from an S3 server, and then provided hooks for POSIX glob to support search paths with wildcards.
+
+# Education
+## University of Maryland, College Park
+### Aug. 2015 - Dec. 2016
+- M.S. Computer Engineering
+- Focus on Machine Learning and Databases
+
+## University of Maryland, College Park
+### Aug. 2011 - May 2015
+- B.S. Computer Engineering
+- Departmental Honors
+
+# Skills
+- **Languages**: TypeScript, JavaScript, C++, Python, SQL, Bash, Go (Learning), Solidity (Learning)
+- **Technologies**: React, NextJS, NodeJS, GraphQL, Postgres, MongoDB, Docker, GCP, AWS, Linux, Git, CI/CD, Agile, Scrum
+- **Other**: Product Management, Technical Writing, Public Speaking, Leadership, Teamwork, Problem Solving, Communication
+- **Languages**: English (Native)
+- **Interests**: Machine Learning, Databases, Distributed Systems, Crytpo, Product Management, Entrepreneurship, Finance, Real Estate, Travel, Fitness, Cooking
