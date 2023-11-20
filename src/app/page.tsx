@@ -1,10 +1,10 @@
 import clsx from 'clsx'
 import Image, { type ImageProps } from 'next/image'
-import Link from 'next/link'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
+import { SocialLink } from '@/components/SocialLink'
 import logoHPE from '@/images/logos/hpe.svg'
 import logoTwnSqr from '@/images/logos/twnsqr.svg'
 import logoUMD from '@/images/logos/umd.svg'
@@ -47,19 +47,6 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
-
-function SocialLink({
-  icon: Icon,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Link> & {
-  icon: React.ComponentType<{ className?: string }>
-}) {
-  return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
   )
 }
 
@@ -141,6 +128,18 @@ function Resume() {
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Recent History</span>
+        <div className="ml-auto flex gap-6">
+          <SocialLink
+            href="https://github.com/just-mitch"
+            aria-label="Follow on GitHub"
+            icon={GitHubIcon}
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/mitch-twnsqr/"
+            aria-label="Follow on LinkedIn"
+            icon={LinkedInIcon}
+          />
+        </div>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
@@ -207,32 +206,6 @@ export default async function Home() {
               Let’s talk.
             </a>
           </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://github.com/just-mitch"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/mitch-twnsqr/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-          </div>
-          <aside className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
-            <p>
-              <strong>Psst:</strong> Check out the source code for this site on{' '}
-              <a
-                className="font-medium text-zinc-900 dark:text-zinc-100"
-                href="https://github.com/just-mitch/mitchelltracy.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              .
-            </p>
-          </aside>
         </div>
       </Container>
       {/* <Photos /> */}

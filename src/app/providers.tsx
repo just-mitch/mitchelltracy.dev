@@ -1,8 +1,9 @@
 'use client'
 
-import { createContext, useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
+import { ThirdwebProvider } from '@thirdweb-dev/react'
 import { ThemeProvider, useTheme } from 'next-themes'
+import { usePathname } from 'next/navigation'
+import { createContext, useEffect, useRef } from 'react'
 
 function usePrevious<T>(value: T) {
   let ref = useRef<T>()
@@ -48,7 +49,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <AppContext.Provider value={{ previousPathname }}>
       <ThemeProvider attribute="class" disableTransitionOnChange>
         <ThemeWatcher />
-        {children}
+        <ThirdwebProvider
+          activeChain={'ethereum'}
+          clientId={process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID}
+        >
+          {children}
+        </ThirdwebProvider>
       </ThemeProvider>
     </AppContext.Provider>
   )
