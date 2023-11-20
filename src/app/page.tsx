@@ -219,6 +219,20 @@ export default async function Home() {
               icon={LinkedInIcon}
             />
           </div>
+          <aside className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
+            <p>
+              <strong>Psst:</strong> Check out the source code for this site on{' '}
+              <a
+                className="font-medium text-zinc-900 dark:text-zinc-100"
+                href="https://github.com/just-mitch/mitchelltracy.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          </aside>
         </div>
       </Container>
       {/* <Photos /> */}
