@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image, { type ImageProps } from 'next/image'
 
 import { Button } from '@/components/Button'
+import { Chat } from '@/components/Chat'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import { SocialLink } from '@/components/SocialLink'
@@ -99,7 +100,7 @@ function Resume() {
   let resume: Array<Role> = [
     {
       company: 'TwnSqr',
-      title: 'CTO',
+      title: 'Co-founder and CTO',
       logo: logoTwnSqr,
       start: '2019',
       end: {
@@ -111,7 +112,7 @@ function Resume() {
       company: 'Hewlett Packard Enterprise',
       title: 'Software Engineer',
       logo: logoHPE,
-      start: '2016',
+      start: '2017',
       end: '2019',
     },
     {
@@ -119,7 +120,7 @@ function Resume() {
       title: 'B.S., M.S. Computer Engineering',
       logo: logoUMD,
       start: '2011',
-      end: '2015',
+      end: '2016',
     },
   ]
 
@@ -211,6 +212,7 @@ export default async function Home() {
       {/* <Photos /> */}
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+          <Chat />
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
           </div>
