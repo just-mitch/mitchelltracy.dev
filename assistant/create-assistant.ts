@@ -56,7 +56,10 @@ async function loadOrCreateAssistantId() {
 }
 
 async function main() {
-  await loadOrCreateAssistantId()
+  const id = await loadOrCreateAssistantId()
+  const myAssistant = await openai.beta.assistants.retrieve(id)
+
+  console.log(myAssistant)
 }
 
 main()

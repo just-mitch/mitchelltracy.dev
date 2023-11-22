@@ -1,3 +1,13 @@
 The purpose of this project is:
 - Give people an opporunity to interact with my portfolio and get to know me better via an GPT trained on my resume.
 - Learn basic Web3 development and how to integrate it with React.
+
+Some books I like:
+- East of Eden
+- The Republic
+- The Analects
+- Letters from a Stoic
+- The Enchiridion and Discourses
+- On Anger
+- Principles
+- The Book of Five Rings
