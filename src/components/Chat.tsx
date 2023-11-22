@@ -60,8 +60,7 @@ export function Conversation({
             <p className="text-lg italic">
               I&apos;m an AI trained on Mitch&apos;s resume, perspective, and
               thoughts. Ask me something like &ldquo;what was mitch&apos;s most
-              recent experience?&rdquo; or &ldquo;what books does mitch
-              like?&rdquo;
+              recent experience?&rdquo;
             </p>
           </div>
         </div>
