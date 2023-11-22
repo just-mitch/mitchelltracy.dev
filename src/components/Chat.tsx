@@ -53,7 +53,7 @@ export function Conversation({
   )
 
   return (
-    <div className="flex  max-h-screen flex-col gap-4 overflow-y-scroll">
+    <div className="flex max-h-screen flex-col gap-4 overflow-y-scroll">
       {messages.length === 0 && (
         <div className="flex items-center justify-center gap-4">
           <div className="rounded-2xl p-4 dark:text-zinc-100">
@@ -79,7 +79,7 @@ export function Conversation({
               'rounded-2xl p-4 shadow-sm shadow-zinc-800 backdrop-blur',
               message.inbound
                 ? 'bg-white dark:bg-zinc-800 dark:ring-white dark:hover:ring-white'
-                : 'bg-zinc-800 ring-zinc-900 dark:bg-white dark:text-zinc-900',
+                : 'bg-zinc-800 text-zinc-100 ring-zinc-900 dark:bg-white dark:text-zinc-900',
             )}
           >
             <p className="text-lg">{message.text}</p>
@@ -93,7 +93,7 @@ export function Conversation({
           onChange={(event) => setInput(event.target.value)}
           disabled={loading}
           type="text"
-          className="w-full rounded-2xl bg-zinc-800 p-4 shadow-sm shadow-zinc-800 ring-zinc-900 backdrop-blur dark:bg-white dark:text-zinc-900"
+          className="w-full rounded-2xl bg-zinc-800 p-4 text-zinc-100 shadow-sm shadow-zinc-800 ring-zinc-900 backdrop-blur dark:bg-white dark:text-zinc-900"
         />
         <button
           onClick={() => {
@@ -124,14 +124,19 @@ export function ConversationLoader({
   chainId: number
   address: string
 }) {
-  // const { isPending, error, data } = useQuery<{
-  //   threadId: string
-  // }>({
-  //   queryKey: [`${chainId}:${address}`],
-  //   queryFn: () =>
-  //     fetch('/api/chat/create', { method: 'POST' }).then((res) => res.json()),
-  // })
-  const threadId = 'thread_O9cxcyRow1pQLQO0Vbk6lEoV'
+  const {
+    isPending,
+    error: createThreadError,
+    data: createThreadData,
+  } = useQuery<{
+    threadId: string
+  }>({
+    queryKey: [`${chainId}:${address}`],
+    queryFn: () =>
+      fetch('/api/chat/create', { method: 'POST' }).then((res) => res.json()),
+  })
+  console.log(createThreadData)
+  const threadId = createThreadData?.threadId
   const {
     isPending: pendingMessages,
     isLoading: loadingMessages,
@@ -146,6 +151,7 @@ export function ConversationLoader({
       inbound: boolean
     }[]
   >({
+    enabled: !!threadId,
     queryKey: [threadId],
     queryFn: () =>
       fetch('/api/chat/read?threadId=' + threadId, { method: 'GET' }).then(
@@ -164,7 +170,7 @@ export function ConversationLoader({
       return fetch('/api/chat/send', {
         method: 'POST',
         body: JSON.stringify({
-          threadId: 'thread_O9cxcyRow1pQLQO0Vbk6lEoV',
+          threadId: threadId,
           text,
         }),
       }).then((res) => res.json())
